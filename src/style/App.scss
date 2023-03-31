@@ -117,8 +117,13 @@ body{
   font-size: 0.9rem;
 }
 
+.features {
+  display: flex;
+  flex-direction: column;
+}
+
 .transactionAmount {
-  border: 2px solid #ddd;
+  border: 2px solid #12002b;
   background-color: white;
 
   h1, p {
@@ -137,18 +142,25 @@ body{
 .table-container {
   flex: 1;
   margin-top: 5rem;
+  overflow-x: auto;
 }
 
 .table {
   margin: 0 auto;
   border-collapse: collapse;
   width: 90%;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.table th, .table td {
+  padding: 8px;
 }
 
 .table tr {
-  border-left: 2px solid #ddd;
-  border-right: 2px solid #ddd;
-  border-bottom: 2px solid #ddd;
+  border-left: 2px solid #12002b;
+  border-right: 2px solid #12002b;
+  border-bottom: 2px solid #12002b;
   background-color: white;
 }
 
@@ -166,22 +178,34 @@ body{
 .table td {
   height: 50px;
   vertical-align: top;
-  position: relative;
 }
 
 .table td:nth-child(2) {
-  width: 20rem;
+  width: 22rem;
+  position: relative;
 }
 
 .dropdown {
   text-align: left;
-  margin-left: 6.3rem;
+  margin-left: 0.2rem;
   margin-top: 2rem;
+  position: relative;
   display: none;
 }
 
 .open {
   display: block;
+}
+
+.fa-chevron-up, 
+.fa-chevron-down {
+  font-size: 20px;
+}
+
+.fa-chevron-up, 
+.fa-chevron-down, 
+.fa-pen {
+  cursor: pointer;
 }
 
 @media (min-width: 920px) {
@@ -206,18 +230,21 @@ body{
     font-size: 1.2rem;
     margin-top: 1.2rem;
   }
-}
 
-.features {
-  display: flex;
-  flex-direction: column;
-}
-
-@media (min-width: 920px) {
   .features {
     flex-direction: row;
   }
+
+  .table {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .dropdown {
+    margin-left:6.8rem;
+  }
 }
+
 
 .feature-icon {
   width: 10rem;

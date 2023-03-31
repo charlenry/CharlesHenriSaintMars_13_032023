@@ -31,10 +31,10 @@ const Transaction = ({date, description, amount, balance, transactionType, categ
           <p>{description}</p>
         </td>
         <td>
-          <p>{amount}</p>
+          <p>{`$${amount.toFixed(2)}`}</p>
         </td>
         <td>
-          <p>{balance}</p>
+          <p>{`$${balance.toFixed(2)}`}</p>
         </td>
       </tr>
     </>

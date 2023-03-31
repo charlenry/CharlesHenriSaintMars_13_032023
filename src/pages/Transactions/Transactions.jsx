@@ -1,17 +1,20 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Transaction from "../../components/Transaction/Transaction";
+import BalanceHeader from "../../components/BalanceHeader/BalanceHeader";
 
 const Transactions = (props) => {
   return (
     <>
       <Header isConnected={true} firstName="Tony" />
+
       <main className="main bg-dark">
-        <div className="transactionAmount">
-          <p>Argent Bank Checking (x8349)</p>
-          <h1>$2,082.79</h1>
-          <p>Available Balance</p>
-        </div>
+        <BalanceHeader
+          accountName="Argent Bank Checking (x8349)"
+          balance={2082.79}
+          description="Available Balance"
+        />
+    
         <div className="table-container">
           <table className="table">
             <thead>
@@ -27,8 +30,8 @@ const Transactions = (props) => {
               <Transaction
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
-                amount="$5.00"
-                balance="$2082.79"
+                amount={5.00}
+                balance={2082.79}
                 transactionType="Electronic"
                 category="Food"
                 notes=""
@@ -36,8 +39,8 @@ const Transactions = (props) => {
               <Transaction
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
-                amount="$10.00"
-                balance="$2087.79"
+                amount={10.00}
+                balance={2087.79}
                 transactionType="Electronic"
                 category="Food"
                 notes=""
@@ -45,8 +48,8 @@ const Transactions = (props) => {
               <Transaction
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
-                amount="$20.00"
-                balance="$2097.79"
+                amount={20.00}
+                balance={2097.79}
                 transactionType="Electronic"
                 category="Food"
                 notes=""
@@ -54,8 +57,8 @@ const Transactions = (props) => {
               <Transaction
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
-                amount="$30.00"
-                balance="$2117.79"
+                amount={30.00}
+                balance={2117.79}
                 transactionType="Electronic"
                 category="Food"
                 notes=""
@@ -63,8 +66,8 @@ const Transactions = (props) => {
               <Transaction
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
-                amount="$40.00"
-                balance="$2147.79"
+                amount={40.00}
+                balance={2147.79}
                 transactionType="Electronic"
                 category="Food"
                 notes=""
@@ -72,8 +75,8 @@ const Transactions = (props) => {
               <Transaction
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
-                amount="$50.00"
-                balance="$2187.79"
+                amount={50.00}
+                balance={2187.79}
                 transactionType="Electronic"
                 category="Food"
                 notes=""
@@ -82,6 +85,7 @@ const Transactions = (props) => {
           </table>
         </div>
       </main>
+      
       <Footer />
     </>
   );

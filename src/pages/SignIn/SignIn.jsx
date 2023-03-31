@@ -1,24 +1,10 @@
-import argentBankLogo from "../../assets/img/argentBankLogo.png";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 const SignIn = (props) => {
   return (
     <>
-      <nav className="main-nav">
-        <a className="main-nav-logo" href="/">
-          <img
-            className="main-nav-logo-image"
-            src={argentBankLogo}
-            alt="Argent Bank Logo"
-          />
-          <h1 className="sr-only">Argent Bank</h1>
-        </a>
-        <div>
-          <a className="main-nav-item" href="/signin">
-            <i className="fa fa-user-circle"></i>
-            Sign In
-          </a>
-        </div>
-      </nav>
+      <Header isConnected={false} />
       <main className="main bg-dark">
         <section className="sign-in-content">
           <i className="fa fa-user-circle sign-in-icon"></i>
@@ -36,18 +22,11 @@ const SignIn = (props) => {
               <input type="checkbox" id="remember-me" />
               <label htmlFor="remember-me">Remember me</label>
             </div>
-            {/* PLACEHOLDER DUE TO STATIC SITE */}
-            <a href="./user.html" className="sign-in-button">
-              Sign In
-            </a>
-            {/* SHOULD BE THE BUTTON BELOW */}
-            {/* <button className="sign-in-button">Sign In</button> */}
+            <button className="sign-in-button">Sign In</button>
           </form>
         </section>
       </main>
-      <footer className="footer">
-        <p className="footer-text">Copyright 2023 Argent Bank</p>
-      </footer>
+      <Footer />
     </>
   );
 };

@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["firefox", "htmlfor", "modele", "popperjs"]
+  "cSpell.words": ["firefox", "htmlfor", "modele", "popperjs"],
+  "git.ignoreLimitWarning": true
 }

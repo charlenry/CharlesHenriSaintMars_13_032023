@@ -208,6 +208,10 @@ body{
   cursor: pointer;
 }
 
+.login-error {
+  color: red;
+}
+
 @media (min-width: 920px) {
   .hero {
     height: 400px;
@@ -383,8 +387,49 @@ body{
 
 .header {
   color: #fff;
+  font-size: 1.2rem;
   margin-bottom: 2rem;
 }
+
+.edit-name-inputs {
+  margin-bottom: 1rem;
+
+  :nth-child(1) {
+    margin-right: 0.5rem;
+    height: 2.5rem;
+    padding-left: 0.5rem;
+  }
+  :nth-child(2) {
+    margin-left: 0.5rem;
+    height: 2.5rem;
+    padding-left: 0.5rem;
+  }
+}
+
+::placeholder {
+  font-size: 1.2rem;
+}
+
+.buttons-wrapper {
+  .save-button, 
+  .cancel-button {
+    padding: 0.5rem 1rem;
+    width: 7rem;
+    height: 2.5rem;
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  :nth-child(1) {
+    margin-right: 0.5rem;
+  }
+  :nth-child(2) {
+    margin-left: 0.5rem;
+  }
+}
+
 
 .transaction-button {
   display: block;

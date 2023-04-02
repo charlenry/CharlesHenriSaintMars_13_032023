@@ -21,8 +21,8 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/profile" element={<Dashboard />} />
         <Route path="/transactions" element={<Transactions />} />
         {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>

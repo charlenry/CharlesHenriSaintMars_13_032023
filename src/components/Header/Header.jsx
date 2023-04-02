@@ -28,13 +28,14 @@ const Header = ({ isConnected, firstName }) => {
                 target="/"
                 icon="fa fa-sign-out"
                 navItemText="Sign Out"
+                signOut={true}
               />
             </div>
           </>
         ) : (
           <div>
             <NavItem
-              target="/signin"
+              target="/login"
               icon="fa fa-user-circle"
               navItemText="Sign In"
             />

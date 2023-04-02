@@ -2,8 +2,24 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Transaction from "../../components/Transaction/Transaction";
 import BalanceHeader from "../../components/BalanceHeader/BalanceHeader";
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 
 const Transactions = (props) => {
+  const { isConnected, token } = useSelector((state) => ({
+    ...state.loginReducer,
+    ...state.profileReducer,
+  }));
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!token || !isConnected) {
+      navigate("/login");
+    }
+  }, [isConnected, token, navigate]);
+
   return (
     <>
       <Header isConnected={true} firstName="Tony" />

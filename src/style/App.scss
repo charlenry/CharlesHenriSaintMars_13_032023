@@ -1,5 +1,6 @@
-
-*, ::before, ::after {
+*,
+::before,
+::after {
   box-sizing: border-box;
   // margin: 0;
   // padding: 0;
@@ -14,7 +15,7 @@ html {
   color: #2c3e50;
 }
 
-body{
+body {
   margin: 0;
 }
 
@@ -26,6 +27,7 @@ body{
 
 .main {
   flex: 1;
+  position: relative;
 }
 
 .bg-dark {
@@ -87,7 +89,7 @@ body{
 }
 
 .hero {
-  background-image: url('../assets/img/bank-tree.jpeg');
+  background-image: url("../assets/img/bank-tree.jpeg");
   background-position: 0 -50px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -126,7 +128,8 @@ body{
   border: 2px solid #12002b;
   background-color: white;
 
-  h1, p {
+  h1,
+  p {
     margin: 0.5rem 0;
   }
 
@@ -153,7 +156,8 @@ body{
   font-size: 14px;
 }
 
-.table th, .table td {
+.table th,
+.table td {
   padding: 8px;
 }
 
@@ -197,13 +201,13 @@ body{
   display: block;
 }
 
-.fa-chevron-up, 
+.fa-chevron-up,
 .fa-chevron-down {
   font-size: 20px;
 }
 
-.fa-chevron-up, 
-.fa-chevron-down, 
+.fa-chevron-up,
+.fa-chevron-down,
 .fa-pen {
   cursor: pointer;
 }
@@ -211,6 +215,78 @@ body{
 .login-error {
   color: red;
 }
+
+.edit-name-inputs {
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
+  margin-bottom: 1rem;
+
+  :nth-child(1) {
+    height: 2.5rem;
+    padding-left: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  :nth-child(2) {
+    height: 2.5rem;
+    padding-left: 0.5rem;
+  }
+}
+
+::placeholder {
+  font-size: 1.2rem;
+}
+
+.buttons-wrapper {
+  .save-button,
+  .cancel-button {
+    padding: 0.5rem 1rem;
+    width: 7rem;
+    height: 2.5rem;
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+  }
+
+  :nth-child(1) {
+    margin-right: 0.5rem;
+  }
+  :nth-child(2) {
+    margin-left: 0.5rem;
+  }
+}
+
+.navitem-container {
+  display: flex;
+}
+
+.notfound {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+
+  a {
+    border-color: #00bc77;
+    background-color: #00bc77;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 14px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    transition-duration: 0.4s;
+
+    &:hover {
+      background-color: white;
+      color: #00bc77;
+    }
+  } 
+}
+
 
 @media (min-width: 920px) {
   .hero {
@@ -245,10 +321,9 @@ body{
   }
 
   .dropdown {
-    margin-left:6.8rem;
+    margin-left: 6.8rem;
   }
 }
-
 
 .feature-icon {
   width: 10rem;
@@ -391,46 +466,6 @@ body{
   margin-bottom: 2rem;
 }
 
-.edit-name-inputs {
-  margin-bottom: 1rem;
-
-  :nth-child(1) {
-    margin-right: 0.5rem;
-    height: 2.5rem;
-    padding-left: 0.5rem;
-  }
-  :nth-child(2) {
-    margin-left: 0.5rem;
-    height: 2.5rem;
-    padding-left: 0.5rem;
-  }
-}
-
-::placeholder {
-  font-size: 1.2rem;
-}
-
-.buttons-wrapper {
-  .save-button, 
-  .cancel-button {
-    padding: 0.5rem 1rem;
-    width: 7rem;
-    height: 2.5rem;
-    border-color: #00bc77;
-    background-color: #00bc77;
-    color: #fff;
-    font-weight: bold;
-  }
-
-  :nth-child(1) {
-    margin-right: 0.5rem;
-  }
-  :nth-child(2) {
-    margin-left: 0.5rem;
-  }
-}
-
-
 .transaction-button {
   display: block;
   width: 100%;
@@ -454,5 +489,16 @@ body{
 
   .transaction-button {
     width: 200px;
+  }
+}
+
+@media (min-width: 382px) {
+  .edit-name-inputs {
+    :nth-child(1) {
+      margin-right: 0.5rem;
+    }
+    :nth-child(2) {
+      margin-left: 0.5rem;
+    }
   }
 }

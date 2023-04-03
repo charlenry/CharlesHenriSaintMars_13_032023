@@ -5,11 +5,38 @@ import Header from "../../components/Header/Header";
 import Hero from "../../components/Hero/Hero";
 import FeatureItem from "../../components/FeatureItem/FeatureItem";
 import Footer from "../../components/Footer/Footer";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
+/**
+ * A function component that renders the home page.
+ * Component's Hierarchy: Every pages
+ * 
+ * @component
+ * @name Home
+ * @kind function
+ * @param {*} props - No props
+ * @returns { JSX.Element }
+ */
 const Home = (props) => {
+  const { isConnected, token, firstName } =
+    useSelector((state) => ({
+      ...state.loginReducer,
+      ...state.profileReducer,
+    }));
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!token || !isConnected) {
+      navigate("/");
+    }
+  }, [isConnected, token, navigate]);
+
   return (
     <>
-      <Header isConnected={false} />
+      <Header isConnected={isConnected} firstName={firstName} />
       <main>
         <Hero />
         <section className="features">

@@ -4,6 +4,16 @@ const INITIAL_STATE = {
   loginError: "",
 };
 
+/**
+ * A function that takes two parameters, state and action.
+ * Updates the state according to the actions
+ * 
+ * @function
+ * @name loginReducer
+ * @param {Object} state - Global state
+ * @param {Objet} action - Redux action
+ * @returns {Object}
+ */
 const loginReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "LOGIN_SUCCEEDED":

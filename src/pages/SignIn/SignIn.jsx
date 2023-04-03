@@ -3,8 +3,18 @@ import Footer from "../../components/Footer/Footer";
 import { login } from '../../redux/actions';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
+/**
+ * A function component that renders the sign in form.
+ * Component's Hierarchy: SignIn
+ * 
+ * @component
+ * @name SignIn
+ * @kind function
+ * @param {*} props - No props
+ * @returns { JSX.Element }
+ */
 const SignIn = (props) => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
@@ -30,7 +40,7 @@ const SignIn = (props) => {
 
   return (
     <>
-      <Header isConnected={false} />
+      <Header isConnected={isConnected} />
       <main className="main bg-dark">
         <section className="sign-in-content">
           <i className="fa fa-user-circle sign-in-icon"></i>

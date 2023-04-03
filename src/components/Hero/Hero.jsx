@@ -1,3 +1,13 @@
+/**
+ * A function component that renders the hero of home page.
+ * Component's Hierarchy: Home > Hero
+ * 
+ * @component
+ * @name Hero
+ * @kind function
+ * @param {*} props - No props
+ * @returns { JSX.Element }
+ */
 const Hero = (props) => {
   return (
     <div className="hero">

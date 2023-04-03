@@ -1,3 +1,14 @@
+
+/**
+ * A function component that renders the footer of each page
+ * Component's Hierarchy: Every pages
+ * 
+ * @component
+ * @name Footer
+ * @kind function
+ * @param {*} props - No props
+ * @returns { JSX.Element }
+ */
 const Footer = (props) => {
   return (
     <footer className="footer">

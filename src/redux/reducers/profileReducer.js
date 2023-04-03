@@ -6,6 +6,16 @@ const INITIAL_STATE = {
   tokenHasExpired: false,
 };
 
+/**
+ * A function that takes two parameters, state and action.
+ * Updates the state according to the actions
+ * 
+ * @function
+ * @name profileReducer
+ * @param {Object} state - Global state
+ * @param {Objet} action - Redux action
+ * @returns {Object}
+ */
 const profileReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case "USER_PROFILE_OK":

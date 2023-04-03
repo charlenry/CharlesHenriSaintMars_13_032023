@@ -1,7 +1,21 @@
 import { editProfile } from "../redux/actions";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import PropTypes from "prop-types";
 
+/**
+ * A function component that renders the dashboard header.
+ * Component's Hierarchy: Dashboard > DashboardHeader
+ * 
+ * @component
+ * @name DashboardHeader
+ * @kind function
+ * @param {string} firstName - The user's first name
+ * @param {string} lastName - The user's last name
+ * @param {string} token - The user's token
+ * @param {boolean} updateProfileSuccess - A boolean that tells if the update attempt was successful.
+ * @returns { JSX.Element }
+ */
 const DashboardHeader = ({ firstName, lastName, token, updateProfileSuccess }) => {
   const [newFirstName, setNewFirstName] = useState("");
   const [NewLastName, setNewLastName] = useState("");
@@ -65,6 +79,14 @@ const DashboardHeader = ({ firstName, lastName, token, updateProfileSuccess }) =
       )}
     </>
   );
+};
+
+// PropTypes
+DashboardHeader.propTypes = {
+  firstName: PropTypes.string,
+  lastName: PropTypes.string,
+  token: PropTypes.string,
+  updateProfileSuccess: PropTypes.bool,
 };
 
 export default DashboardHeader;

@@ -1,5 +1,22 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
+/**
+ * A function component that renders a transaction.
+ * Component's Hierarchy: Transactions > Transaction
+ * 
+ * @component
+ * @name Transaction
+ * @kind function
+ * @param {string} date - The date of the transaction
+ * @param {string} description - The description of the transaction
+ * @param {number} amount - The amount of the transaction
+ * @param {number} balance - The balance of the transaction
+ * @param {string} transactionType - The transaction type
+ * @param {string} category - The transaction category
+ * @param {string} notes - The transaction note
+ * @returns { JSX.Element }
+ */
 const Transaction = ({date, description, amount, balance, transactionType, category, notes}) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -39,6 +56,17 @@ const Transaction = ({date, description, amount, balance, transactionType, categ
       </tr>
     </>
   );
+};
+
+// PropTypes
+Transaction.propTypes = {
+  date: PropTypes.string,
+  description: PropTypes.string,
+  amount: PropTypes.number,
+  balance: PropTypes.number,
+  transactionType: PropTypes.string,
+  category: PropTypes.string,
+  notes: PropTypes.string,
 };
 
 export default Transaction;

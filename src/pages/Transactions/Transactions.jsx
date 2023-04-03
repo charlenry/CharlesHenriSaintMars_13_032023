@@ -3,32 +3,58 @@ import Footer from "../../components/Footer/Footer";
 import Transaction from "../../components/Transaction/Transaction";
 import BalanceHeader from "../../components/BalanceHeader/BalanceHeader";
 import { useEffect } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+/**
+ * A function component that renders the page of transactions.
+ * Component's Hierarchy: Transactions
+ * 
+ * @component
+ * @name Transactions
+ * @kind function
+ * @param {*} props - No props
+ * @returns { JSX.Element }
+ */
 const Transactions = (props) => {
-  const { isConnected, token } = useSelector((state) => ({
+  const { isConnected, token, firstName } = useSelector((state) => ({
     ...state.loginReducer,
     ...state.profileReducer,
   }));
 
   const navigate = useNavigate();
+  const location = useLocation();
+  const state = location.state;
+  let balance = state.accountBalance;
+
+  /**
+   * A function that takes in an amount and returns the balance.
+   * 
+   * @function
+   * @name calcBalance
+   * @memberof Transactions
+   * @param {number} amount
+   * @returns {number}
+   */
+  const calcBalance = (amount) => {
+    return (balance += amount);
+  }
 
   useEffect(() => {
     if (!token || !isConnected) {
-      navigate("/login");
-    }
-  }, [isConnected, token, navigate]);
+      navigate("/");
+    }   
+  }, [isConnected, token, balance, navigate]);
 
   return (
     <>
-      <Header isConnected={true} firstName="Tony" />
+      <Header isConnected={isConnected} firstName={firstName} />
 
       <main className="main bg-dark">
         <BalanceHeader
-          accountName="Argent Bank Checking (x8349)"
-          balance={2082.79}
-          description="Available Balance"
+          accountName={state.accountTitle}
+          balance={state.accountBalance}
+          description={state.accountDesc}
         />
     
         <div className="table-container">
@@ -47,7 +73,7 @@ const Transactions = (props) => {
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
                 amount={5.00}
-                balance={2082.79}
+                balance={state.accountBalance}
                 transactionType="Electronic"
                 category="Food"
                 notes=""
@@ -56,7 +82,7 @@ const Transactions = (props) => {
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
                 amount={10.00}
-                balance={2087.79}
+                balance={calcBalance(5.00)}
                 transactionType="Electronic"
                 category="Food"
                 notes=""
@@ -65,7 +91,7 @@ const Transactions = (props) => {
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
                 amount={20.00}
-                balance={2097.79}
+                balance={calcBalance(10.00)}
                 transactionType="Electronic"
                 category="Food"
                 notes=""
@@ -74,7 +100,7 @@ const Transactions = (props) => {
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
                 amount={30.00}
-                balance={2117.79}
+                balance={calcBalance(20.00)}
                 transactionType="Electronic"
                 category="Food"
                 notes=""
@@ -83,7 +109,7 @@ const Transactions = (props) => {
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
                 amount={40.00}
-                balance={2147.79}
+                balance={calcBalance(30.00)}
                 transactionType="Electronic"
                 category="Food"
                 notes=""
@@ -92,7 +118,7 @@ const Transactions = (props) => {
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
                 amount={50.00}
-                balance={2187.79}
+                balance={calcBalance(40.00)}
                 transactionType="Electronic"
                 category="Food"
                 notes=""

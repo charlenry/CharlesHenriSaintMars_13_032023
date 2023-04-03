@@ -1,4 +1,17 @@
-// Login action
+/*** Login action ***/
+
+/**
+ * A function that takes two parameters, email and password, and returns a function that takes a parameter, dispatch.
+ * Allows to get the credentials from the database for authentication. If success, returns a token and sends an update 
+ * request of the state to the loginReducer.
+ * 
+ * @async
+ * @function
+ * @name login
+ * @param {string} email
+ * @param {string} password
+ * @returns {function}
+ */
 export const login = (email, password) => async (dispatch) => {
   const options = {
     method: "POST",
@@ -31,7 +44,19 @@ export const login = (email, password) => async (dispatch) => {
 };
 
 
-// Get user profile action
+/*** Get user profile action ***/
+
+/**
+ * A function that takes a parameter, token, and returns a function that takes a parameter, dispatch.
+ * Allows to get the user's profile with the token got by login function and sends an update request 
+ * of the state to the profileReducer.
+ * 
+ * @async
+ * @function
+ * @name login
+ * @param {string} token
+ * @returns {function}
+ */
 export const getProfile = (token) => async (dispatch) => {
   const options = {
     method: "POST",
@@ -67,7 +92,22 @@ export const getProfile = (token) => async (dispatch) => {
 };
 
 
-// Edit user profile action
+/*** Edit user profile action ***/
+
+/**
+ * A function that takes three parameters, token, firstName and lastName, and returns a function 
+ * that takes a parameter, dispatch.
+ * Allows to update the user's profile with the token got by login function and sends an update request 
+ * of the state to the profileReducer.
+ * 
+ * @async
+ * @function
+ * @name editProfile
+ * @param {string} token
+ * @param {string} firstName
+ * @param {string} lastName
+ * @returns {function}
+ */
 export const editProfile =  (token, firstName, lastName) => async (dispatch) => {
   const options = {
     method: "PUT",
@@ -99,7 +139,16 @@ export const editProfile =  (token, firstName, lastName) => async (dispatch) => 
 };
 
 
-// Logout action
+/*** Logout action ***/
+
+/**
+ * A function that takes no parameters and returns a function that takes a parameter, dispatch.
+ * Allows to log out by sending a request to reset the state to the loginReducer and the profileReducer. 
+ * @async
+ * @function
+ * @name logout
+ * @returns {function}
+ */
 export const logout = () => async (dispatch) => {
   dispatch({ type: "LOGOUT" })
 }

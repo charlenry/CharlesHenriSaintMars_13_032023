@@ -25,7 +25,10 @@ const Transactions = (props) => {
   const navigate = useNavigate();
   const location = useLocation();
   const state = location.state;
-  let balance = state.accountBalance;
+  const accountBalance = (state === null) ? 0 : state.accountBalance;
+  const accountTitle = (state === null) ? "" : state.accountTitle;
+  const accountDesc = (state === null) ? "" : state.accountDesc;
+  let balance = (state === null) ? 0 : state.accountBalance;
 
   /**
    * A function that takes in an amount and returns the balance.
@@ -52,9 +55,9 @@ const Transactions = (props) => {
 
       <main className="main bg-dark">
         <BalanceHeader
-          accountName={state.accountTitle}
-          balance={state.accountBalance}
-          description={state.accountDesc}
+          accountName={accountTitle}
+          balance={accountBalance}
+          description={accountDesc}
         />
     
         <div className="table-container">
@@ -73,7 +76,7 @@ const Transactions = (props) => {
                 date="June 20th, 2020"
                 description="Golden Sun Bakery"
                 amount={5.00}
-                balance={state.accountBalance}
+                balance={accountBalance}
                 transactionType="Electronic"
                 category="Food"
                 notes=""

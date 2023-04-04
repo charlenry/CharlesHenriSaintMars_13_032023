@@ -21,7 +21,7 @@ const Account = ({title, accountRef, balance, description}) => {
     navigate('/transactions', {state:{
       accountTitle: title,
       accountRef: accountRef,
-      accountBalance: balance,
+      previousBalance: balance,
       accountDesc: description,
     }});
   };

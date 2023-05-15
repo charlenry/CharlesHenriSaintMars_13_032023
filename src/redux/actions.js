@@ -53,7 +53,7 @@ export const login = (email, password) => async (dispatch) => {
  * 
  * @async
  * @function
- * @name login
+ * @name getProfile
  * @param {string} token
  * @returns {function}
  */

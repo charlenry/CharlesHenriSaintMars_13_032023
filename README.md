@@ -7,3 +7,6 @@ This Frontend project is created with [Create React App](https://github.com/face
 2. Afterwards, clone this projet (not in the folder of the previous cloned project). Then go to the folder where the package.json file is located and run in an other terminal the command `yarn install`. When finished, run the command `yarn start`. The application will start in your browser on port 3000 at the address [http://localhost:3000](http://localhost:3000).
 
 3. The JSDoc is accessible at the address [https://charlenry.github.io/CharlesHenriSaintMars_13_032023/docs/](https://charlenry.github.io/CharlesHenriSaintMars_13_032023/docs/).
+
+4. My solution for the API endpoints in YAML format for transaction operations: [https://github.com/charlenry/Project-13-Bank-API/blob/master/swagger.yaml](https://github.com/charlenry/Project-13-Bank-API/blob/master/swagger.yaml).
+
